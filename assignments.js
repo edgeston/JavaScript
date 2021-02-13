@@ -38,5 +38,26 @@ const isIsland = false;
 console.log(language, continent, isIsland)
 
 
+// LECTURE: Basic Operators
+// 1. Ifyourcountrysplitinhalf,andeachhalfwouldcontainhalfthepopulation, then how many people would live in each half?
+// 2. Increasethepopulationofyourcountryby1andlogtheresulttotheconsole
+// 3. Finlandhasapopulationof6million.Doesyourcountryhavemorepeoplethan
+// Finland?
+// 4. Theaveragepopulationofacountryis33millionpeople.Doesyourcountry
+// have less people than the average country?
+// 5. Basedonthevariablesyoucreated,createanewvariable'description'
+// which contains a string with this format: 'Portugal is in Europe, and its 11 million people speak portuguese'
 
+halfOfPopulation = (population / 2);
+console.log(halfOfPopulation + ' ' + 'people'); //164500000 people
 
+// population++;
+console.log(population); 329000001
+
+let finlandPopulation = 6000000; 
+console.log(population > finlandPopulation); //true
+
+let averagePopulation = 33000000; 
+console.log(population >= averagePopulation);
+
+console.log(country + " is in " + continent + ", and it's " + population + " speak " + language + "." );
