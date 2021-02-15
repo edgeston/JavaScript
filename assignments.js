@@ -61,3 +61,9 @@ let averagePopulation = 33000000;
 console.log(population >= averagePopulation);
 
 console.log(country + " is in " + continent + ", and it's " + population + " speak " + language + "." );
+
+
+// LECTURE: Strings and Template Literals
+// 1. Recreatethe'description'variablefromthelastassignment,thistime using the template literal syntax
+const description = `The ${country} is in ${continent}, and it's ${population} people speak ${language}.`;
+console.log(description);
