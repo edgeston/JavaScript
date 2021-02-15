@@ -36,3 +36,19 @@ console.log(markBMI, johnBMI);
 
 markHigherBMI = markBMI > johnBMI; 
 console.log(markHigherBMI); //false
+
+// Coding Challenge #2
+// Use the BMI example from Challenge #1, and the code you already wrote, and improve it.
+// Your tasks:
+// 1. Printaniceoutputtotheconsole,sayingwhohasthehigherBMI.Themessage is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+// 2. UseatemplateliteraltoincludetheBMIvaluesintheoutputs.Example:"Mark's BMI (28.3) is higher than John's (23.9)!"
+// Hint: Use an if/else statement 😉 GOOD LUCK 😀
+
+markBMI.toFixed(2);
+johnBMI.toFixed(2);
+
+if (markBMI > johnBMI) {
+    console.log(`Mark's BMI (${markBMI.toFixed(2)}) is higher than Johns (${johnBMI.toFixed(2)})! Mark is the heaviest!`);
+} else {
+    console.log(`John's BMI (${johnBMI.toFixed(2)}) is higher than Marks (${markBMI.toFixed(2)})! John is the heaviest!`);
+}
