@@ -3,7 +3,7 @@
 assign their values according to your own country (population in millions)
 2. Log their values to the console*/
 
-let country = 'United States'; 
+let country = 'United States';
 // let continent = 'North America';
 let population = 329000000;
 // console.log(country, continent, population);
@@ -19,9 +19,9 @@ to the console */
 let language;
 
 // console.log(typeof(isIsland));
-console.log(typeof(population));
-console.log(typeof(country));
-console.log(typeof(language));
+console.log(typeof (population));
+console.log(typeof (country));
+console.log(typeof (language));
 
 /* LECTURE: let, const and var
 1. Setthevalueof'language'tothelanguagespokenwhereyoulive(some countries have multiple languages, but just choose one)
@@ -54,16 +54,31 @@ console.log(halfOfPopulation + ' ' + 'people'); //164500000 people
 // population++;
 console.log(population); 329000001
 
-let finlandPopulation = 6000000; 
+let finlandPopulation = 6000000;
 console.log(population > finlandPopulation); //true
 
-let averagePopulation = 33000000; 
+let averagePopulation = 33000000;
 console.log(population >= averagePopulation);
 
-console.log(country + " is in " + continent + ", and it's " + population + " speak " + language + "." );
+console.log(country + " is in " + continent + ", and it's " + population + " speak " + language + ".");
 
 
 // LECTURE: Strings and Template Literals
 // 1. Recreatethe'description'variablefromthelastassignment,thistime using the template literal syntax
 const description = `The ${country} is in ${continent}, and it's ${population} people speak ${language}.`;
 console.log(description);
+
+// LECTURE: Type Conversion and Coercion
+// 1. Predict the result of these 5 operations without executing them:
+// '9' - '5';
+// '19' - '13' + '17';
+// '19' - '13' + 17;
+// '123' < 57;
+// 5 + 6 + '4' + 9 - 4 - 2;
+// 2. Execute the operations to check if you were right
+
+console.log('9' - '5'); //4
+console.log('19' - '13' + '17'); //617
+console.log('19' - '13' + 17); //23
+console.log('123' < 57); //false
+console.log(5 + 6 + '4' + 9 - 4 - 2); //1143
