@@ -102,12 +102,14 @@ console.log(5 + 6 + '4' + 9 - 4 - 2); //1143
 // 8. Reflect on why we should use the === operator and type conversion in this
 // situation
 
-const numNeighbours = prompt(`How many neighboring countries does the ${country} have?`)
+const numNeighbours = prompt(`How many neighboring countries does the ${country} have?`);
+console.log(typeof (numNeighbours));
 
-if (numNeighbours == 1) {
+if (numNeighbours != 1) {
     console.log(`One border needed`)
 } else if (numNeighbours > 1) {
     console.log(`${numNeighbours} borders needed`)
 } else {
     console.log(`No borders needed`)
 }
+//No Type Coercion performed on the Strict Equality/ InEquality Operator
