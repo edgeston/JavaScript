@@ -128,12 +128,12 @@ console.log(5 + 6 + '4' + 9 - 4 - 2); //1143
 // change some variables in order to make the condition true(unless you live in
 //     Canada : D)
 
-country = 'Canada';
-language = 'English';
-population = 40000000;
+// country = 'Canada';
+// language = 'English';
+// population = 40000000;
 
-if (language === 'English' && population < 50000000 && !isIsland) {
-    console.log(`${country} is the country for you.`)
-} else {
-    console.log(`${country} is not for you.`)
-}
+// if (language === 'English' && population < 50000000 && !isIsland) {
+//     console.log(`${country} is the country for you!`)
+// } else {
+//     console.log(`${country} does not meet your criteria.`)
+// }
