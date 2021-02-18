@@ -86,13 +86,13 @@ if (dolphinsAverage > koalasAverage) {
 // score, as well as multiple else-if blocks 😉
 // § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
 
-dolphinsAverage = ((97 + 112 + 101) / 3);
+dolphinsAverage = ((97 + 99 + 101) / 3);
 koalasAverage = ((109 + 95 + 123) / 3);
 
 if (dolphinsAverage >= 100 && dolphinsAverage > koalasAverage) {
-    console.log(`Dolphins' Average is at least 100 points and higher than Koalas. DOLPHINS WIN!!!`)
+    console.log(`Dolphins' Average(${dolphinsAverage.toFixed(2)}) is at least 100 points and higher than Koalas(${koalasAverage.toFixed(2)}). DOLPHINS WIN!!!`)
 } else if (koalasAverage >= 100 && koalasAverage > dolphinsAverage) {
-    console.log(`Koalas' Average is at least 100 points and is higher than Dolphlins. KOALAS WIN!!`)
+    console.log(`Koalas' Average(${koalasAverage.toFixed(2)}) is at least 100 points and is higher than Dolphlins(${dolphinsAverage.toFixed(2)}). KOALAS WIN!!`)
 } else if (koalasAverage === dolphinsAverage && dolphinsAverage >= 100 && koalasAverage >= 100) {
     console.log(`Both Teams have an equal average and an average of at least 100 points. DRAW!`)
 } else {
@@ -103,3 +103,16 @@ if (dolphinsAverage >= 100 && dolphinsAverage > koalasAverage) {
 // both teams have the same score and both have a score greater or equal 100
 // points. Otherwise, no team wins the trophy
 // § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+dolphinsAverage = ((97 + 99 + 101) / 3);
+koalasAverage = ((109 + 95 + 106) / 3);
+
+if (dolphinsAverage >= 100 && dolphinsAverage > koalasAverage) {
+    console.log(`Dolphins' Average(${dolphinsAverage.toFixed(2)}) is at least 100 points and higher than Koalas(${koalasAverage.toFixed(2)}). DOLPHINS WIN!!!`)
+} else if (koalasAverage >= 100 && koalasAverage > dolphinsAverage) {
+    console.log(`Koalas' Average(${koalasAverage.toFixed(2)}) is at least 100 points and is higher than Dolphlins(${dolphinsAverage.toFixed(2)}). KOALAS WIN!!`)
+} else if (koalasAverage === dolphinsAverage && dolphinsAverage >= 100 && koalasAverage >= 100) {
+    console.log(`Both Teams have an equal average and an average of at least 100 points. DRAW!`)
+} else {
+    console.log(`Both teams don't have an average of at least 100 points. BOTH TEAMS LOSE!`)
+}
