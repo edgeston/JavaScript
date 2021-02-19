@@ -140,4 +140,4 @@ let tip;
 
 bill >= 50 && bill <= 300 ? tip = (.15 * bill) : tip = (.2 * bill);
 
-console.log(`The bill was ${bill}, the tip was ${tip}, the total value is ${bill + tip}`);
+console.log(`The bill was $${bill.toFixed(2)}, the tip was $${tip.toFixed(2)}, the total value is $${(bill + tip).toFixed(2)}`);
