@@ -191,3 +191,14 @@ const percentageOfWorld2 = function (country, population) {
 console.log(percentageOfWorld2('China', 1441));
 console.log(percentageOfWorld2('United States', 329));
 console.log(percentageOfWorld2('Canada', 35.6));
+
+// LECTURE: Arrow Functions
+// 1. Recreate the last assignment, but this time create an arrow function called
+// 'percentageOfWorld3'
+
+const percentageOfWorld3 = (country, population) => `${country} has ${population} million people, so that us about ${((population / 7900) * 100).toFixed(2)}% of the population`;
+
+console.log(percentageOfWorld3('China', 1441));
+console.log(percentageOfWorld3('United States', 329));
+console.log(percentageOfWorld3('Canada', 35.6));
+
