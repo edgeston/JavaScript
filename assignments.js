@@ -191,9 +191,27 @@ const canPop = percentageOfWorld1(37.6);
 const mexPop = percentageOfWorld1(127);
 console.log(usPop, canPop, mexPop);
 
+// LECTURE: Arrow Functions
+// 1. Recreate the last assignment, but this time create an arrow function called
+// 'percentageOfWorld3'
+
 const percentageOfWorld3 = population => ((population / 7900) * 100).toFixed(2);
 const usPop1 = percentageOfWorld3(329);
 const canPop1 = percentageOfWorld3(37.6);
 const mexPop1 = percentageOfWorld3(127);
 console.log(usPop1, canPop1, mexPop1);
 
+// LECTURE: Functions Calling Other Functions
+// 1. Create a function called 'describePopulation'. Use the function type you
+// like the most. This function takes in two arguments: 'country' and
+// 'population', and returns a string like this: 'China has 1441 million people,
+// which is about 18.2% of the world.'
+// 2. To calculate the percentage, 'describePopulation' call the
+// 'percentageOfWorld1' you created earlier
+// 3. Call 'describePopulation' with data for 3 countries of your choice
+
+const describePopulation = function (country, population) {
+    const percentage = percentageOfWorld1(population);
+    return `${country} has ${population} million people, which is about ${percentage}% of the world's population.`
+}
+console.log(describePopulation('United States', 329));
