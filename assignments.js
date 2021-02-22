@@ -177,43 +177,23 @@ console.log(describeMexico);
 // 'percentageOfWorld2', and also call it with 3 country populations (can be
 // the same populations)
 
-function percentageOfWorld1(country, population) {
-    return `${country} has ${population} million people, so that is about ${((population / 7900) * 100).toFixed(2)}% of the population`;
-}
-console.log(percentageOfWorld1('China', 1441));
-console.log(percentageOfWorld1('United States', 329));
-console.log(percentageOfWorld1('Canada', 35.6));
-
-const percentageOfWorld2 = function (country, population) {
-    return `${country} has ${population} million people, so that is about ${((population / 7900) * 100).toFixed(2)}% of the population`;
+function percentageOfWorld1(population) {
+    return ((population / 7900) * 100).toFixed(2);
 }
 
-console.log(percentageOfWorld2('China', 1441));
-console.log(percentageOfWorld2('United States', 329));
-console.log(percentageOfWorld2('Canada', 35.6));
 
-// LECTURE: Arrow Functions
-// 1. Recreate the last assignment, but this time create an arrow function called
-// 'percentageOfWorld3'
-
-const percentageOfWorld3 = (country, population) => `${country} has ${population} million people, so that us about ${((population / 7900) * 100).toFixed(2)}% of the population`;
-
-console.log(percentageOfWorld3('China', 1441));
-console.log(percentageOfWorld3('United States', 329));
-console.log(percentageOfWorld3('Canada', 35.6));
-
-// LECTURE: Functions Calling Other Functions
-// 1. Create a function called 'describePopulation'. Use the function type you
-// like the most. This function takes in two arguments: 'country' and
-// 'population', and returns a string like this: 'China has 1441 million people,
-// which is about 18.2% of the world.'
-// 2. To calculate the percentage, 'describePopulation' call the
-// 'percentageOfWorld1' you created earlier
-// 3. Call 'describePopulation' with data for 3 countries of your choice
-
-function describePopulation(country, population) {
-    return `${country} has ${population} million people, which is about ${percentageOfWorld1}% of the wor'd population`;
+const percentageOfWord2 = function (population) {
+    return ((population / 7900) * 100).toFixed(2);
 }
 
-const percentage = describePopulation('United States', 329);
-console.log(percentage);
+const usPop = percentageOfWorld1(329);
+const canPop = percentageOfWorld1(37.6);
+const mexPop = percentageOfWorld1(127);
+console.log(usPop, canPop, mexPop);
+
+const percentageOfWorld3 = population => ((population / 7900) * 100).toFixed(2);
+const usPop1 = percentageOfWorld3(329);
+const canPop1 = percentageOfWorld3(37.6);
+const mexPop1 = percentageOfWorld3(127);
+console.log(usPop1, canPop1, mexPop1);
+
