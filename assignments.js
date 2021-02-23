@@ -139,79 +139,80 @@
 // //     console.log(`${country} does not meet your criteria.`)
 // // }
 
-// // LECTURE: The Conditional (Ternary) Operator
-// // 1. If your country's population is greater than 33 million, use the ternary operator
-// // to log a string like this to the console: 'Portugal's population is above average'.
-// // Otherwise, simply log 'Portugal's population is below average'. Notice how only
-// // one word changes between these two sentences!
-// // 2. After checking the result, change the population temporarily to 13 and then to
-// // 130. See the different results, and set the population back to original
+// // // LECTURE: The Conditional (Ternary) Operator
+// // // 1. If your country's population is greater than 33 million, use the ternary operator
+// // // to log a string like this to the console: 'Portugal's population is above average'.
+// // // Otherwise, simply log 'Portugal's population is below average'. Notice how only
+// // // one word changes between these two sentences!
+// // // 2. After checking the result, change the population temporarily to 13 and then to
+// // // 130. See the different results, and set the population back to original
 
-// population >= 33000000 ? 'above' : 'below';
-// console.log(`The ${country}'s population is ${population >= 33000000 ? 'above' : 'below'} average`);
-
-
-function describeCountry(country, population, capitalCity) {
-    return `${country} has ${population} million people and it's capital city is ${capitalCity} `;
-}
-
-const describeUnitedStates = describeCountry('United States', 329, 'Washington D.C.');
-console.log(describeUnitedStates);
-const describeCanada = describeCountry('Canada', 37.6, 'Ottowa');
-console.log(describeCanada);
-const describeMexico = describeCountry('Mexico', 127.6, 'Mexico City');
-console.log(describeMexico);
+// // population >= 33000000 ? 'above' : 'below';
+// // console.log(`The ${country}'s population is ${population >= 33000000 ? 'above' : 'below'} average`);
 
 
-// LECTURE: Function Declarations vs. Expressions
-// 1. The world population is 7900 million people. Create a function declaration
-// called 'percentageOfWorld1' which receives a 'population' value, and
-// returns the percentage of the world population that the given population
-// represents. For example, China has 1441 million people, so it's about 18.2% of
-// the world population
-// 2. To calculate the percentage, divide the given 'population' value by 7900
-// and then multiply by 100
-// 3. Call 'percentageOfWorld1' for 3 populations of countries of your choice,
-// store the results into variables, and log them to the console
-// 4. Create a function expression which does the exact same thing, called
-// 'percentageOfWorld2', and also call it with 3 country populations (can be
-// the same populations)
+// function describeCountry(country, population, capitalCity) {
+//     return `${country} has ${population} million people and it's capital city is ${capitalCity} `;
+// }
 
-function percentageOfWorld1(population) {
-    return ((population / 7900) * 100).toFixed(2);
-}
+// const describeUnitedStates = describeCountry('United States', 329, 'Washington D.C.');
+// console.log(describeUnitedStates);
+// const describeCanada = describeCountry('Canada', 37.6, 'Ottowa');
+// console.log(describeCanada);
+// const describeMexico = describeCountry('Mexico', 127.6, 'Mexico City');
+// console.log(describeMexico);
 
 
-const percentageOfWord2 = function (population) {
-    return ((population / 7900) * 100).toFixed(2);
-}
+// // LECTURE: Function Declarations vs. Expressions
+// // 1. The world population is 7900 million people. Create a function declaration
+// // called 'percentageOfWorld1' which receives a 'population' value, and
+// // returns the percentage of the world population that the given population
+// // represents. For example, China has 1441 million people, so it's about 18.2% of
+// // the world population
+// // 2. To calculate the percentage, divide the given 'population' value by 7900
+// // and then multiply by 100
+// // 3. Call 'percentageOfWorld1' for 3 populations of countries of your choice,
+// // store the results into variables, and log them to the console
+// // 4. Create a function expression which does the exact same thing, called
+// // 'percentageOfWorld2', and also call it with 3 country populations (can be
+// // the same populations)
 
-const usPop = percentageOfWorld1(329);
-const canPop = percentageOfWorld1(37.6);
-const mexPop = percentageOfWorld1(127);
-console.log(usPop, canPop, mexPop);
+// function percentageOfWorld1(population) {
+//     return ((population / 7900) * 100).toFixed(2);
+// }
 
-// LECTURE: Arrow Functions
-// 1. Recreate the last assignment, but this time create an arrow function called
-// 'percentageOfWorld3'
 
-const percentageOfWorld3 = population => ((population / 7900) * 100).toFixed(2);
-const usPop1 = percentageOfWorld3(329);
-const canPop1 = percentageOfWorld3(37.6);
-const mexPop1 = percentageOfWorld3(127);
-console.log(usPop1, canPop1, mexPop1);
+// const percentageOfWord2 = function (population) {
+//     return ((population / 7900) * 100).toFixed(2);
+// }
 
-// LECTURE: Functions Calling Other Functions
-// 1. Create a function called 'describePopulation'. Use the function type you
-// like the most. This function takes in two arguments: 'country' and
-// 'population', and returns a string like this: 'China has 1441 million people,
-// which is about 18.2% of the world.'
-// 2. To calculate the percentage, 'describePopulation' call the
-// 'percentageOfWorld1' you created earlier
-// 3. Call 'describePopulation' with data for 3 countries of your choice
+// const usPop = percentageOfWorld1(329);
+// const canPop = percentageOfWorld1(37.6);
+// const mexPop = percentageOfWorld1(127);
+// console.log(usPop, canPop, mexPop);
 
-const describePopulation = function (country, population) {
-    const percentage = percentageOfWorld1(population);
-    return `${country} has ${population} million people, which is about ${percentage}% of the world's population.`
-}
-console.log(describePopulation('United States', 329));
+// // LECTURE: Arrow Functions
+// // 1. Recreate the last assignment, but this time create an arrow function called
+// // 'percentageOfWorld3'
+
+// const percentageOfWorld3 = population => ((population / 7900) * 100).toFixed(2);
+// const usPop1 = percentageOfWorld3(329);
+// const canPop1 = percentageOfWorld3(37.6);
+// const mexPop1 = percentageOfWorld3(127);
+// console.log(usPop1, canPop1, mexPop1);
+
+// // LECTURE: Functions Calling Other Functions
+// // 1. Create a function called 'describePopulation'. Use the function type you
+// // like the most. This function takes in two arguments: 'country' and
+// // 'population', and returns a string like this: 'China has 1441 million people,
+// // which is about 18.2% of the world.'
+// // 2. To calculate the percentage, 'describePopulation' call the
+// // 'percentageOfWorld1' you created earlier
+// // 3. Call 'describePopulation' with data for 3 countries of your choice
+
+// const describePopulation = function (country, population) {
+//     const percentage = percentageOfWorld1(population);
+//     return `${country} has ${population} million people, which is about ${percentage}% of the world's population.`
+// }
+// console.log(describePopulation('United States', 329));
+
