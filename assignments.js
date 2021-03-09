@@ -226,20 +226,20 @@
 // 'percentageOfWorld1' that you created earlier to compute the 4
 // percentage values
 
-// function percentageOfWorld1(population) {
-//     return ((population / 7900) * 100).toFixed(2);
-// }
-// const populations = [329, 127, 37.6, 67];
-// console.log(populations.length === 4);
+function percentageOfWorld1(population) {
+    return ((population / 7900) * 100).toFixed(2);
+}
+const populations = [329, 127, 37.6, 67];
+console.log(populations.length === 4);
 
-// const percentages = [
-//     percentageOfWorld1(populations[0]),
-//     percentageOfWorld1(populations[1]),
-//     percentageOfWorld1(populations[2]),
-//     percentageOfWorld1(populations[3])
-// ];
+const percentages = [
+    percentageOfWorld1(populations[0]),
+    percentageOfWorld1(populations[1]),
+    percentageOfWorld1(populations[2]),
+    percentageOfWorld1(populations[3])
+];
 
-// console.log(percentages);
+console.log(percentages);
 
 // // LECTURE: Introduction to Objects
 // // 1. Create an object called 'myCountry' for a country of your choice, containing
@@ -306,24 +306,38 @@
 // 3. Confirmthat'percentages2'containsexactlythesamevaluesasthe
 // 'percentages' array that we created manually in the previous assignment, and reflect on how much better this solution is
 
-// const percentages2 = [];
-// for(let i = 0; i < populations.length; i++) {
-//     percentages2.push(((populations[i] / 7900) * 100).toFixed(2));
-// }
-// console.log(percentages2);
+const percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(((populations[i] / 7900) * 100).toFixed(2));
+}
+console.log(percentages2);
 
 // LECTURE: Looping Backwards and Loops in Loops
 // 1. Storethisarrayofarraysintoavariablecalled'listOfNeighbours' [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
 // 2. Logonlytheneighbouringcountriestotheconsole,onebyone,nottheentire arrays. Log a string like 'Neighbour: Canada' for each country
 // 3. Youwillneedaloopinsidealoopforthis.Thisisactuallyabittricky,sodon't worry if it's too difficult for you! But you can still try to figure this out anyway 😉
 
-const listOfNeighbors = [
-    ['Canada', 'Mexico'], 
-    ['Spain'], 
-    ['Norway', 'Sweden', 'Russia']
-]
-for(let i = 0; i < listOfNeighbors.length; i++){
-    for(let y = 0; y < listOfNeighbors.length; y++){
-        console.log(`Neighbour: ${listOfNeighbors[i][y]}`);    
-    }
+// const listOfNeighbors = [
+//     ['Canada', 'Mexico'], 
+//     ['Spain'], 
+//     ['Norway', 'Sweden', 'Russia']
+// ]
+// for(let i = 0; i < listOfNeighbors.length; i++){
+//     for(let y = 0; y < listOfNeighbors.length; y++){
+//         console.log(`Neighbour: ${listOfNeighbors[i][y]}`);    
+//     }
+// }
+
+// LECTURE: The while Loop
+// 1. Recreate the challenge from the lecture 'Looping Arrays, Breaking and Continuing',
+// but this time using a while loop (call the array 'percentages3')
+// 2. Reflect on what solution you like better for this task: the for loop or the while
+// loop?
+
+const percentages3 = [];
+let i = 0
+while (i < populations.length) {
+    percentages3.push(((populations[i] / 7900) * 100).toFixed(2));
+    i++;
 }
+console.log(percentages3);
