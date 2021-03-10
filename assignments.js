@@ -306,9 +306,11 @@ console.log(percentages);
 // 3. Confirmthat'percentages2'containsexactlythesamevaluesasthe
 // 'percentages' array that we created manually in the previous assignment, and reflect on how much better this solution is
 
+const populationz = [10, 1441, 332, 83];
 const percentages2 = [];
-for (let i = 0; i < populations.length; i++) {
-    percentages2.push(((populations[i] / 7900) * 100).toFixed(2));
+for (let i = 0; i < populationz.length; i++) {
+    const pct = percentageOfWorld1(populationz[i]);
+    percentages2.push(pct);
 }
 console.log(percentages2);
 
@@ -337,7 +339,8 @@ console.log(percentages2);
 const percentages3 = [];
 let i = 0
 while (i < populations.length) {
-    percentages3.push(((populations[i] / 7900) * 100).toFixed(2));
+    const perc = percentageOfWorld1(populations[i]);
+    percentages3.push(perc);
     i++;
 }
 console.log(percentages3);
