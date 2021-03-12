@@ -344,3 +344,41 @@ while (i < populations.length) {
     i++;
 }
 console.log(percentages3);
+
+///////////////////////////////////////
+// Using Google, StackOverflow and MDN
+
+// PROBLEM 1:
+// We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
+
+const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+
+//1 Understanding the problem
+// - What is templerature Amplitude? Answer: Difference between higher and lowest temp
+// - How to compute the max + min temperatures
+// - What does a sensor error look like? What is a sensor error?
+
+//2 Break problem into sub-problems
+// - Ignore sensor errors - Will only apply to numbers
+// - Find max value in temperatures array
+// - Fine min value in temperatures array
+// - subtract min from max - To find Amplitude
+// - Return Amplitude
+
+
+const calcTempAmplitude = function (temps) {
+    let maxTemp = temps[0];
+    let minTemps = temps[0];
+    for (let i = 0; i < temps.length; i++) {
+        if (temps[i] > maxTemp) maxTemp = temps[i];
+        if (temps[i] < minTemps) minTemps = temps[i];
+        if (typeof curTemp !== 'number') continue;
+    }
+    console.log(maxTemp, minTemps);
+    return maxTemp - minTemps;
+};
+
+calcTempAmplitude([2, 3, 6, 23, 567]);
+const amplitude = calcTempAmplitude(temperatures);
+console.log(amplitude);
+//for loop will iterate until the end of the array. Will continue to check to see if there are any higher numbers
