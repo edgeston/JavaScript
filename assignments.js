@@ -382,3 +382,31 @@ calcTempAmplitude([2, 3, 6, 23, 567]);
 const amplitude = calcTempAmplitude(temperatures);
 console.log(amplitude);
 //for loop will iterate until the end of the array. Will continue to check to see if there are any higher numbers
+
+//Problem 2
+//Function should recieve 2 arrays of temperatures
+
+//- Understanding the problem
+// - Do we need to repeat ourselves? - No, we can merge arrays. 
+
+//- Break down problem
+//- merge two arrays and process both through the function.
+// - We can use the concat method to merge arrays
+
+
+const calcTempAmplitudeNew = function (t1, t2) {
+    const temps = t1.concat(t2);
+    let maxTemp = t1[0];
+    let minTemps = t2[0];
+    for (let i = 0; i < temps.length; i++) {
+        if (t1[i] > maxTemp) maxTemp = t1[i];
+        if (t2[i] < minTemps) minTemps = t2[i];
+        if (typeof curTemp !== 'number') continue;
+    }
+    console.log(maxTemp, minTemps);
+    return maxTemp - minTemps;
+};
+
+const amplitudeNew = calcTempAmplitudeNew([3, 4, 5], [3, 6, 7]);
+console.log(amplitudeNew);
+
