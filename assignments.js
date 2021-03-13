@@ -306,11 +306,9 @@ console.log(percentages);
 // 3. Confirmthat'percentages2'containsexactlythesamevaluesasthe
 // 'percentages' array that we created manually in the previous assignment, and reflect on how much better this solution is
 
-const populationz = [10, 1441, 332, 83];
 const percentages2 = [];
-for (let i = 0; i < populationz.length; i++) {
-    const pct = percentageOfWorld1(populationz[i]);
-    percentages2.push(pct);
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(((populations[i] / 7900) * 100).toFixed(2));
 }
 console.log(percentages2);
 
@@ -339,74 +337,7 @@ console.log(percentages2);
 const percentages3 = [];
 let i = 0
 while (i < populations.length) {
-    const perc = percentageOfWorld1(populations[i]);
-    percentages3.push(perc);
+    percentages3.push(((populations[i] / 7900) * 100).toFixed(2));
     i++;
 }
 console.log(percentages3);
-
-///////////////////////////////////////
-// Using Google, StackOverflow and MDN
-
-// PROBLEM 1:
-// We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
-
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-
-//1 Understanding the problem
-// - What is templerature Amplitude? Answer: Difference between higher and lowest temp
-// - How to compute the max + min temperatures
-// - What does a sensor error look like? What is a sensor error?
-
-//2 Break problem into sub-problems
-// - Ignore sensor errors - Will only apply to numbers
-// - Find max value in temperatures array
-// - Fine min value in temperatures array
-// - subtract min from max - To find Amplitude
-// - Return Amplitude
-
-
-const calcTempAmplitude = function (temps) {
-    let maxTemp = temps[0];
-    let minTemps = temps[0];
-    for (let i = 0; i < temps.length; i++) {
-        if (temps[i] > maxTemp) maxTemp = temps[i];
-        if (temps[i] < minTemps) minTemps = temps[i];
-        if (typeof curTemp !== 'number') continue;
-    }
-    console.log(maxTemp, minTemps);
-    return maxTemp - minTemps;
-};
-
-calcTempAmplitude([2, 3, 6, 23, 567]);
-const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude);
-//for loop will iterate until the end of the array. Will continue to check to see if there are any higher numbers
-
-//Problem 2
-//Function should recieve 2 arrays of temperatures
-
-//- Understanding the problem
-// - Do we need to repeat ourselves? - No, we can merge arrays. 
-
-//- Break down problem
-//- merge two arrays and process both through the function.
-// - We can use the concat method to merge arrays
-
-
-const calcTempAmplitudeNew = function (t1, t2) {
-    const temps = t1.concat(t2);
-    let maxTemp = t1[0];
-    let minTemps = t2[0];
-    for (let i = 0; i < temps.length; i++) {
-        if (t1[i] > maxTemp) maxTemp = t1[i];
-        if (t2[i] < minTemps) minTemps = t2[i];
-        if (typeof curTemp !== 'number') continue;
-    }
-    console.log(maxTemp, minTemps);
-    return maxTemp - minTemps;
-};
-
-const amplitudeNew = calcTempAmplitudeNew([3, 4, 5], [3, 6, 7]);
-console.log(amplitudeNew);
-
