@@ -30,3 +30,16 @@ const firstName = 'Monikka'; // Global variable = Accessible Everywhere
 calcAge(1993);
 // console.log(age); // Reference Error: age is not defines globally
 // printAge(); // function cannot definined globally
+
+// Hoisting practice
+
+//Variables
+console.log(me); // undefined
+// console.log(job); //Reference Error - TDZ here. We must declare before 
+// console.log(year); //Reference Error - TDZ here. We must declare before. 
+var me = 'Monikka';
+let job = 'programmer';
+const year = 1993;
+
+//Functions
+
