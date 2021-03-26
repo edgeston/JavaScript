@@ -129,10 +129,23 @@ const jessica2 = {
   firstName: 'Jessica',
   lastName: 'Williams',
   age: 27,
+  family: ['Alice', 'Bob'],
 };
 
 //If we wanted to alter info on one object, we will use a method call object.assign() Merges two objects and returns a new one.
 const jessicaCopy = Object.assign({}, jessica2);
 jessicaCopy.lastName = 'Davis';
+// We were able to preserve the origional and create a copy.
 console.log('Before Marriage', jessica2);
 console.log('After Marriage', jessicaCopy);
+
+jessicaCopy.family.push('Hubby');
+jessicaCopy.family.push('John');
+console.log('Before Marriage', jessica2);
+console.log('After Marriage', jessicaCopy);
+//Using Object.assign() only work on the first level. If we have an object within an object, the inner object will have these same values.
+
+//family.assign, did not work. Only on the first level woth the changing of last names.
+
+//We will need a deep clone to adjust the array to seperate the family array.
+//Will be learning later on.
