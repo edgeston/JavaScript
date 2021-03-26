@@ -1,151 +1,101 @@
 'use strict';
-// function calcAge(birthYear) { // Defined in the Global Scope
-//     const age = 2021 - birthYear;
 
-//     function printAge() {
-//         let output = `${firstName} is ${age} years old born in ${birthYear}` // Variable look up ascends
-//         console.log(output);
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-//         if (birthYear >= 1981 && birthYear <= 1996) {
-//             //Creating new variable with same name as outer scopes variable
-//             const firstName = 'Monique'; // must initalize before running string JS loos for Variable name within current scope
-//             const str = `Oh, and you're a millenial, ${firstName}`;
-//             console.log(str);
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
-//             function add(a, b) {
-//                 return a + b;
-//             }
-//             console.log(add(3, 4)); //Code still runs outside the blockscope
-//             output = 'NEW OUTPUT'; //CRe-assigning outer scope's variable
-//             console.log(output);
-//         }
-//         // console.log(str); //const and let variables are only available in the block scope
-//     }
-//     printAge();
-//     return age;
-// }
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
 
-// const firstName = 'Monikka'; // Global variable = Accessible Everywhere
-// // calcAge(1993);
-// // console.log(age); // Reference Error: age is not defines globally
-// // printAge(); // function cannot definined globally
+// Basic destructuring
+const arr = [2, 3, 4];
+const a = arr[0]; //2
+const b = arr[1]; //3
+const c = arr[2]; //4
 
-// // Hoisting practice
+//Destructuring the array;
+const [x, y, z] = arr; // Elements of the array
+console.log(x, y, z);
+console.log(arr);
 
-// //Variables
-// console.log(me); // undefined
-// // console.log(job); //Reference Error - TDZ here. We must declare before
-// // console.log(year); //Reference Error - TDZ here. We must declare before.
-// var me = 'Monikka';
-// let job = 'programmer';
-// const year = 1993;
+// To Destructure
+// To skip extracting an element, you will need to add a blank space in the destructure array and add the 'second' value you would like the array element
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
 
-// //Functions
+//Basic way of switching, main and temporary
+// Switching variables
+// let temp = main;
+// main = secondary;
+// secondary = temp;
+// console.log(main, secondary); // flipped the main and secondary choices
 
-// console.log(addDeclaration(2, 3)); // can be ran before the function is declared
-// // console.log(addExpression(2, 3)); // Reference error. Placed in TDZ is considered a const variable so the same rules will apply
-// console.log(arrow); // Will be considered undefined, if we add values, we will get errors.
-// function addDeclaration(a, b) {
-//     return a + b;
-// }
+//Using destructuring
+//Changing secondary into the main
 
-// const addExpression = function (a, b) {
-//     return a + b;
-// }
+//1. Write an Array with the elements inverted
+//2. De-struct
 
-// var arrow = (a, b) => a + b;
+[main, secondary] = [secondary, main]; // since the array is a let, we are simply re-assigning the values for secondary and main.
+console.log(main, secondary);
 
-// //Pitfall of Hoisting
+//Destructuring menus
 
-// if (!numProducts) deleteShoppingCart();
-// var numProducts = 10; //Since the variable is delcared by var, we will get a falsy value undefined. 0 also is a falsy value Hoisting will cause the deleteShoppingCart function to be declared.
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-// function deleteShoppingCart() {
-//     console.log('All products deleted');
-// }
-
-// var x = 1;
-// let y = 2;
-// const z = 3;
-
-// console.log(x === window.x);
-// console.log(y === window.y);
-// console.log(z === window.z);
-
-// This keyword practice
-
-//Simple function call
-// console.log(this); // The window object
-// const calcAge = function (birthYear) {
-//     console.log(2021 - 1993);
-//     console.log(this); // undefined in strict mode.
-// }
-
-// calcAge(1993);
-
-// Arrow function
-
-// const calcAge = birthYear => 2021 - birthYear; // Arrow function does not get it's own this keyword, it moves up to the global scope.
-// calcAge(1993);
-// console.log(this); //Lexical scope = moved to the global scope
-
-// const monikka = {
-//   firstName: 'Monikka',
-//   year: 1993,
-//   calcAge: function () {
-//     console.log(this);
-//     console.log(2021 - this.year);
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 //   },
-//   greet: () => console.log(`Hey ${this.firstName}`),
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
 // };
+console.log(restaurant.order(2, 0)); //Extracing the 3rd element in the starterMenu and the 1st element in the mainMenu
 
-// monikka.greet();
+//Recieve 2 return values from a function
+//Destructiung the resturant.order
+const [starter, mainCourse] = restaurant.order(2, 0);
 
-//Primitive Types
-let lastName = 'Edgeston';
-let oldLastName = lastName;
-lastName = 'Williams';
-console.log(lastName, oldLastName);
-
-//Reference Types
-const jessica = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
-  age: 27,
-};
-
-const marriedJessica = jessica; // References the origional memory address. Both hold the same memory value in the reference.
-jessica.lastName = 'Davis';
-console.log(`Before Marriage:`, jessica);
-console.log(`After Marriage`, marriedJessica);
-//Davis appears in the lastName of the origional and marriedJessica objects.
-
-// marriedJessica = {} - Will not work with const
-
-// How to copy an object and change the object without altering the other.
-//Copying Objects
-
-const jessica2 = {
-  firstName: 'Jessica',
-  lastName: 'Williams',
-  age: 27,
-  family: ['Alice', 'Bob'],
-};
-
-//If we wanted to alter info on one object, we will use a method call object.assign() Merges two objects and returns a new one.
-const jessicaCopy = Object.assign({}, jessica2);
-jessicaCopy.lastName = 'Davis';
-// We were able to preserve the origional and create a copy.
-console.log('Before Marriage', jessica2);
-console.log('After Marriage', jessicaCopy);
-
-jessicaCopy.family.push('Hubby');
-jessicaCopy.family.push('John');
-console.log('Before Marriage', jessica2);
-console.log('After Marriage', jessicaCopy);
-//Using Object.assign() only work on the first level. If we have an object within an object, the inner object will have these same values.
-
-//family.assign, did not work. Only on the first level woth the changing of last names.
-
-//We will need a deep clone to adjust the array to seperate the family array.
-//Will be learning later on.
+//Nested De-Structuring
+const nested = [2, 4, 6, [5, 6]];
+// const [i, , , j] = nested;
+// console.log(i, j);
+const [i, , , [j, k]] = nested;
+console.log(i, j, k);
