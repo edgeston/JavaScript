@@ -122,7 +122,10 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
+  //Practical application to destructuring
+  orderDelivery: function (starterIndex, mainIndex, time, address) {
+    console.log(`Order Recieved!` ${this.mainMenu[mainIndex]});
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -139,14 +142,42 @@ const restaurant = {
   },
 };
 
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 const { name, openingHours, categories } = restaurant; // Destructuring Objects. We will use the names of the properties of the objects.
 console.log(name, openingHours, categories);
 
 // We can also use variables to name the properties.
 const {
-  name: restaurantName,
+  name: restaurantName, // using colon to speficy a new name.
   openingHours: hours,
   categories: tags,
 } = restaurant;
 
-console.log(restaurantName);
+console.log(restaurantName, hours, tags);
+
+// Setting default variables
+
+const { menu = [], starterMenu: starters = [] } = restaurant; //Use = sign to set a default value
+console.log(menu, starters); //menu is an empty default array. starters, is the renames starter menu
+
+//Mutating Variables
+
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+console.log(a, b);
+
+//Mutating a + b
+({ a, b } = obj); // We must wrap the variables we're mutating into variables
+console.log(a, b);
+
+//Nested Objects
+const {
+  fri: { open: o, close: c },
+} = openingHours; // To further destructure the object, use ":"
+console.log(o, c);
