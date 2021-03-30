@@ -142,6 +142,10 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  }
 };
 
 const arr = [7, 8, 9];
@@ -151,6 +155,40 @@ console.log(badNewArr);
 //Spread Operator
 const newArr = [1, 2, ...arr];
 console.log(newArr);
+
+console.log(...newArr);// Shows individual elemets of the array
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi']; // Creating a completely new array and adding an individual element
+console.log(newMenu);
+
+//Copy Array
+const mainMenuCopy = [...restaurant.mainMenu]; // Shallow copy of mainMenu array
+
+// Join 2 Arrays or more
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+//Iterables
+const str = 'monikka';
+const letters = [...str, '', 'S.'];
+console.log(letters); //Each letter of the origional string is now an individual element
+console.log(...str);
+// Values with multiple commas, do not belong in Template literals
+
+// const ingredients = [prompt("Let's make pasta! Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients); // Always use ES6 feature spread operator
+
+//Objects
+
+const newResturant = { foundedIn: 1998, ...restaurant, founder: 'Monikka' };
+console.log(newResturant);
+
+const restaurantCopy = { ...newResturant };
+restaurantCopy.name = 'Resturanti Mesturanti';
+console.log(restaurantCopy.name, restaurant.name);
+
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   address: 'Via del Sole, 21',
