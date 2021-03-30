@@ -147,32 +147,41 @@ const restaurant = {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
   }
 };
+//Rest Pattern
+const arr = [1, 2, ...[3, 4]]; // Spread Operator in action
+//Rest, because of left side of equal sign
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b); //1,2
+console.log(others); //3,4,5
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+//We can use the rest patters on both sides of the assignment operator
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]; //Will remove Pizza and Risotto from the main menu\
+console.log(pizza, risotto, otherFood);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-//Spread Operator
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// //Spread Operator
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-console.log(...newArr);// Shows individual elemets of the array
+// console.log(...newArr);// Shows individual elemets of the array
 
-const newMenu = [...restaurant.mainMenu, 'Gnocchi']; // Creating a completely new array and adding an individual element
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocchi']; // Creating a completely new array and adding an individual element
+// console.log(newMenu);
 
-//Copy Array
-const mainMenuCopy = [...restaurant.mainMenu]; // Shallow copy of mainMenu array
+// //Copy Array
+// const mainMenuCopy = [...restaurant.mainMenu]; // Shallow copy of mainMenu array
 
-// Join 2 Arrays or more
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// // Join 2 Arrays or more
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-//Iterables
-const str = 'monikka';
-const letters = [...str, '', 'S.'];
-console.log(letters); //Each letter of the origional string is now an individual element
-console.log(...str);
+// //Iterables
+// const str = 'monikka';
+// const letters = [...str, '', 'S.'];
+// console.log(letters); //Each letter of the origional string is now an individual element
+// console.log(...str);
 // Values with multiple commas, do not belong in Template literals
 
 // const ingredients = [prompt("Let's make pasta! Ingredient 1?"), prompt("Ingredient 2?"), prompt("Ingredient 3?")];
@@ -182,12 +191,12 @@ console.log(...str);
 
 //Objects
 
-const newResturant = { foundedIn: 1998, ...restaurant, founder: 'Monikka' };
-console.log(newResturant);
+// const newResturant = { foundedIn: 1998, ...restaurant, founder: 'Monikka' };
+// console.log(newResturant);
 
-const restaurantCopy = { ...newResturant };
-restaurantCopy.name = 'Resturanti Mesturanti';
-console.log(restaurantCopy.name, restaurant.name);
+// const restaurantCopy = { ...newResturant };
+// restaurantCopy.name = 'Resturanti Mesturanti';
+// console.log(restaurantCopy.name, restaurant.name);
 
 // restaurant.orderDelivery({
 //   time: '22:30',
