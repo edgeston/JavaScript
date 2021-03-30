@@ -145,18 +145,73 @@ const restaurant = {
 
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`);
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
   }
 };
+//&& and || operators
+//Use Any data type, Return Any data type and Short Curcuiting/ Short Circut Evaluation (if first value is truthy, it will return that first value other operant will not be evaluated)
+
+//||
+console.log(3 || 'Monikka'); //3
+console.log('' || 'Monikka'); // 'Monikka'
+console.log(true || 0); // true
+console.log(undefined || null); //null
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // Stops at 'Hello'. Hello is a truthy value
+
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2); // Took the first truthy vaalue
+console.log('----- AND ---');
+//&& Operator
+console.log(0 && 'Monikka'); // 0
+// && Operator short circuits when the first falsy value appears
+
+// restaurant.orderPizza('Spinach', 'Onions', 'Olives', 'Mushrooms');
+// restaurant.orderPizza('Mushrooms'); // Will leave empty array
+
+//Functions - Rest Parameters
+//Does the opposite of the spread operator
+
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++)
+//     sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 3, 5, 4, 8, 2, 1);
+// const x = [23, 5, 7];
+// add(...x); // Adding the spread operator, Spreading the operator into individally then processing them through the add function. 
+
+
+
+// Rest Parameters are taking multiple numbers and packing it into one Array
+
+// Destructuring 
+/// Rest in Objects
+
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 //Rest Pattern
-const arr = [1, 2, ...[3, 4]]; // Spread Operator in action
+// const arr = [1, 2, ...[3, 4]]; // Spread Operator in action
 //Rest, because of left side of equal sign
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b); //1,2
-console.log(others); //3,4,5
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b); //1,2
+// console.log(others); //3,4,5
 
 //We can use the rest patters on both sides of the assignment operator
-const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]; //Will remove Pizza and Risotto from the main menu\
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]; //Will remove Pizza and Risotto from the main menu. Doesn't include any skipped elements.
+// console.log(pizza, risotto, otherFood);
+
+// Only 1 ...rest in each assignment
+
 // const arr = [7, 8, 9];
 // const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 // console.log(badNewArr);
