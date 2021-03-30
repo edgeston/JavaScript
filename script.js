@@ -119,12 +119,14 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  //Practical application to destructuring
-  orderDelivery: function (starterIndex, mainIndex, time, address) {
-    console.log(`Order Recieved!` ${this.mainMenu[mainIndex]});
+
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
   },
   openingHours: {
     thu: {
@@ -142,42 +144,50 @@ const restaurant = {
   },
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
-const { name, openingHours, categories } = restaurant; // Destructuring Objects. We will use the names of the properties of the objects.
-console.log(name, openingHours, categories);
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
 
-// We can also use variables to name the properties.
-const {
-  name: restaurantName, // using colon to speficy a new name.
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
+//Spread Operator
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+// const { name, openingHours, categories } = restaurant; // Destructuring Objects. We will use the names of the properties of the objects.
+// console.log(name, openingHours, categories);
 
-console.log(restaurantName, hours, tags);
+// // We can also use variables to name the properties.
+// const {
+//   name: restaurantName, // using colon to speficy a new name.
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
 
-// Setting default variables
+// console.log(restaurantName, hours, tags);
 
-const { menu = [], starterMenu: starters = [] } = restaurant; //Use = sign to set a default value
-console.log(menu, starters); //menu is an empty default array. starters, is the renames starter menu
+// // Setting default variables
 
-//Mutating Variables
+// const { menu = [], starterMenu: starters = [] } = restaurant; //Use = sign to set a default value
+// console.log(menu, starters); //menu is an empty default array. starters, is the renames starter menu
 
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-console.log(a, b);
+// //Mutating Variables
 
-//Mutating a + b
-({ a, b } = obj); // We must wrap the variables we're mutating into variables
-console.log(a, b);
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// console.log(a, b);
 
-//Nested Objects
-const {
-  fri: { open: o, close: c },
-} = openingHours; // To further destructure the object, use ":"
-console.log(o, c);
+// //Mutating a + b
+// ({ a, b } = obj); // We must wrap the variables we're mutating into variables
+// console.log(a, b);
+
+// //Nested Objects
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours; // To further destructure the object, use ":"
+// console.log(o, c);
+
