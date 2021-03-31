@@ -151,7 +151,27 @@ const restaurant = {
     console.log(otherIngredients);
   }
 };
+//For-Of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
+for (const item of menu) console.log(item);
+
+
+
+
+
+
+
+
+// Null Coalescing Operator ??
+
+// restaurant.numGuests = 0;
+// const guests = restaurant.numGuests || 10;
+// console.log(guests);
+
+// //Nullish Values: null and undefined. (NOT 0 or '')
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log(guestCorrect); // Get the Real Value of 0
 
 //&& and || operators
 //Use Any data type, Return Any data type and Short Curcuiting/ Short Circut Evaluation (if first value is truthy, it will return that first value other operant will not be evaluated)
